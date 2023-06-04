@@ -20,8 +20,14 @@ class CreateEtudiantsTable extends Migration
             $table->string('telephone', 15);
             $table->string('courriel', 100)->unique();
             $table->date('date_naissance');
+<<<<<<< HEAD
             $table->timestamps();
             $table->foreignId('ville_id')->constrained(table: 'villes');
+=======
+            $table->integer('ville_id');
+            $table->timestamps();
+            $table->foreign('ville_id')->references('id')->on('ville');
+>>>>>>> d62f89d2a3d949bf3d1915aeb8c536bfbacaa59f
         });
     }
 
